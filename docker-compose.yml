@@ -1,24 +1,10 @@
-version: '3.8'
+version: '3'
 services:
-  pg:
-    image: postgres
-    container_name: pg
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: root
-      POSTGRES_PASSWORD: root
-      POSTGRES_DB: mycontacts
   urubu:
     container_name: urubu
     restart: always
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
-      - 3001:3001
-    depends_on:
-      - pg
+      - 4000:4000
     env_file:
       - .env
