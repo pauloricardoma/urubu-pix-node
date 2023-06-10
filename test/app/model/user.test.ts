@@ -8,4 +8,4 @@ describe('User Api Test Suite', () => {
     const user = new User('John');
     expect('John').toStrictEqual(user.name);
   })
-})
+});
