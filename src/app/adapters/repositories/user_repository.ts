@@ -1,10 +1,9 @@
-import { PrismaClientValidationError } from '@prisma/client/runtime';
 import prisma from '../../../client';
 import { User } from '../../model/user';
 
 export class UsersRepository {
   async create(user: User) {
-    const result = await prisma.users.create({
+    const result = await prisma.user.create({
       data: user,
     });
     
