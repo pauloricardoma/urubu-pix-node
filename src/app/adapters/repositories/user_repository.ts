@@ -1,3 +1,4 @@
+import { PrismaClientValidationError } from '@prisma/client/runtime';
 import prisma from '../../../client';
 import { User } from '../../model/user';
 
@@ -6,7 +7,7 @@ export class UsersRepository {
     const result = await prisma.users.create({
       data: user,
     });
-
+    
     this.disconnect();
     return result;
   }
