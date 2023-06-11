@@ -3,7 +3,7 @@ import {
 } from '@jest/globals';
 import supertest from 'supertest';
 import app from '../../src/server';
-import { Users } from '@prisma/client';
+import { User } from '@prisma/client';
 
 describe('Api e2e Test Suite', () => {
   test('POST /users - should create a new user', async () => {
@@ -13,7 +13,7 @@ describe('Api e2e Test Suite', () => {
 
     const data = JSON.parse(response.text);
     expect(response.status).toStrictEqual(200);
-    expect(data).toMatchObject({} as Users);
+    expect(data).toMatchObject({} as User);
     expect(data.name).toStrictEqual('Mary');
   })
 });
