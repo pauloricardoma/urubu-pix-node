@@ -9,6 +9,8 @@
     "dev": "cross-env NODE_ENV=test nodemon --files src/index.ts",
     "generate:prisma": "dotenv -e .env.prod -- npx prisma migrate dev",
     "generate:test": "dotenv -e .env.test -- npx prisma migrate dev",
+    "pstudio:prod": "dotenv -e .env.prod -- npx prisma studio",
+    "pstudio:test": "dotenv -e .env.test -- npx prisma studio",
     "test": "jest - i",
     "test:watch": "cross-env NODE_ENV=test jest -i --watchAll"
   },
