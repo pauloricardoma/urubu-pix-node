@@ -1,12 +1,14 @@
 import { Router } from 'express';
-import usersController from './app/adapters/controllers/usersController';
+import userController from './app/adapters/controllers/userController';
+import OrderController from './app/adapters/controllers/orderController';
 
 export const router = Router();
 
-const newUsersController = new usersController();
+const newUserController = new userController();
+const newOrderController = new OrderController();
 
-// create User
-router.post('/users', newUsersController.create);
+// users routes
+router.post('/users', newUserController.create);
 
-// auth login
-// router.post('/login', Authcontroller.authenticated);
+// orders routes
+router.post('/orders', newOrderController.create);
