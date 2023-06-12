@@ -1,11 +1,11 @@
-import { UsersRepository } from "../../adapters/repositories/user_repository";
+import { UserRepository } from "../../adapters/repositories/user_repository";
 import { User } from "../../model/user";
 
 export class Create {
   constructor(
     public params: any,
     public user: typeof User,
-    public user_repository: UsersRepository,
+    public user_repository: UserRepository,
   ) {
     this.params = params;
     this.user = user;
